@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <meta name="keywords" content="....">
+      <meta name="description" content="....">
+      <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/main.css" />
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      -->
+      <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+      <title>Dashboard</title>
+
+<style>
+
+ </style>
+   </head>
+   <body>
+ 
+
+
+      <section class="main-content">
+         <div class="container">
+             <!-- start content area -->  
+             <div class="container-area mx-auto">
+
+                      <div class="row">
+                        <div class="col-md-3">
+                            <div class="left-sidebar">
+                              <!-- <a class="navbar-brand" href="#"><img src="images/logo-white.png" /></a> -->
+                              <a class="navbar-brand" href="#"><img src="images/Seatle.png" border="0" class="mt-1" style="max-width:180px" /></a>
+
+                              <ul class="nav nav-tabs nav-sides-radius px-3 nav-fill w-100" id="tabs" role="tablist">
+                              <li class="nav-item">
+                              <a class="nav-link active"   data-toggle="tab" href="#register-handler" role="tab" aria-controls="newwallet" aria-selected="true">Register handler</a>
+                              </li>
+                              <li class="nav-item">
+                              <a class="nav-link"  data-toggle="tab" href="#register-product" role="tab" aria-controls="Tab2" aria-selected="false">Register product</a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link"   data-toggle="tab" href="#update-status" role="tab" aria-controls="Tab3" aria-selected="false">Update status</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                          <a class="nav-link"  data-toggle="tab" href="#track-product" role="tab" aria-controls="Tab4" aria-selected="false">Track product</a>
+                                          </li>
+
+                                          <li class="nav-item">
+                                                <a class="nav-link"  data-toggle="tab" href="#get-handler" role="tab" aria-controls="Tab5" aria-selected="false">Get handler</a>
+                                                </li>
+
+                                                <li class="nav-item">
+                                                      <a class="nav-link"  data-toggle="tab" href="#list-all-handlers" role="tab" aria-controls="Tab6" aria-selected="false">List all handlers</a>
+                                                      </li>
+
+
+                                                      <li class="nav-item">
+                                                            <a class="nav-link"  data-toggle="tab" href="#list-all-products" role="tab" aria-controls="Tab7" aria-selected="false">List all products</a>
+                                                            </li>
+
+
+                              </ul>
+                              </div>
+                        </div>
+                        <div class="col-md-9">
+                          
+                           <!-- box with shadow -->
+                        <div>                 
+                       <!-- tabs -->
+                        <div class="col-md-12 p-0">
+
+
+
+                              
+                              <div class="tab-content" id="tabs-content">
+
+
+                              <!-- register-handler-->
+                              <div class="tab-pane fade show active" id="register-handler" role="tabpanel" aria-labelledby="Tab1-tab">
+                      
+
+
+                              <div class="col-md-5 mx-auto pt-5">
+                                    <h3 class="mt-2 text-center">Register handler</h3>
+                                    <div class="form-label-group mb-1">
+                                       <label>Address of Handler</label>
+                                       <input type="text" id="ethadd" class="form-control our-inputs" placeholder="Enter your address" required="">   
+                                    </div>
+
+                                    <div class="form-label-group mb-1">
+                                          <label>Name</label>
+                                          <input type="text" id="hname" class="form-control our-inputs" placeholder="Enter your name" required="">   
+                                       </div>
+
+
+                                    <div class="form-label-group mb-1">
+                                       <label>Location</label>
+                                       <input type="text" id="haddr" class="form-control our-inputs" placeholder="Enter location" required="">                
+                                    </div>
+
+                                    <div class="form-label-group mb-1">
+                                      <label>Role</label>
+                                      <input type="text" id="role" class="form-control our-inputs" placeholder="Enter role" required="">                
+                                   </div>
+
+                                  
+                                    <div class="form-label-group mt-4">
+                                       <a href="#" onclick="registerHandler()" class="btn btn-primary">Register</a> 
+                                                 
+                                    </div>
+
+
+
+                                    <div class="py-4"> 
+                                        <h4 >##Status Of Transactionhash:</h4>
+                                      
+                                      </div>
+                                 </div>
+                                 <div class="text-center"><p id="addhandstat"> </p></div>
+
+
+                              
+                              </div>
+                              <!-- end register-handler -->
+
+
+                                  <!-- register-handler-->
+                                  <div class="tab-pane fade" id="register-product" role="tabpanel" aria-labelledby="Tab1-tab">
+                                       <div class="col-md-5 mx-auto pt-5">
+                                             <h3 class="mt-2 text-center">Register Product</h3>
+                                             <div class="form-label-group mb-1">
+                                                <label>Unique product id</label>
+                                                <input type="text" id="uid" class="form-control our-inputs" placeholder="Enter your id" required="">   
+                                             </div>
+         
+                                             <div class="form-label-group mb-1">
+                                                   <label>Product name</label>
+                                                   <input type="text" id="name" class="form-control our-inputs" placeholder="Enter your product" required="">   
+                                                </div>
+         
+         
+                                             <div class="form-label-group mb-1">
+                                                <label>Action taken</label>
+                                                <input type="text" id="action" class="form-control our-inputs" placeholder="Plan of action" required="">                
+                                             </div>
+         
+                                             <div class="form-label-group mb-1">
+                                                   <label>Latitude</label>
+                                                   <input type="text" id="lat" class="form-control our-inputs" placeholder="Enter in degrees" required="">                
+                                                </div>
+
+
+                                                <div class="form-label-group mb-1">
+                                                      <label>Longitude</label>
+                                                      <input type="text" id="lon" class="form-control our-inputs" placeholder="Enter in degrees" required="">                
+                                                   </div>
+         
+         
+                                             <div class="form-label-group mt-4">
+                                                <center><a href="#" onclick="registerProduct()" class="btn btn-primary">Register</a></center>           
+                                             </div>
+                                             <div class="py-4"> 
+                                                <h4 >##Status Of Transactionhash:</h4>
+                                              
+                                              </div>
+                                         </div>
+                                         <div class="text-center"><p id="addprodstat"> </p></div>
+  
+                                      
+                                  </div>
+                                       <!-- end register-handler -->
+
+
+                                       <!-- update-status -->
+                              <div class="tab-pane fade" id="update-status" role="tabpanel" aria-labelledby="Tab2-tab">
+                                    <div class="col-md-5 mx-auto pt-5">
+                                          <h3 class="mt-2 text-center">Update status</h3>
+                                          <div class="form-label-group mb-1">
+                                             <label>Unique product id</label>
+                                             <input type="text" id="cuid" class="form-control our-inputs" placeholder="Enter your id" required="">   
+                                          </div>
+      
+                                          <!-- <div class="form-label-group mb-1">
+                                                <label>Action</label>
+                                                <select class="form-control our-inputs">
+                                                      <option>Select Action</option>
+                                                  <option>Farm Inspector</option>
+                                                  <option>Harvester</option>
+                                                  <option>Exporter</option>
+                                                  <option>Importer</option>
+                                                  <option>Processor</option>
+
+                                                </select>  
+                                             </div>
+       -->
+      
+                                          <div class="form-label-group mb-1">
+                                             <label>Action taken</label>
+                                             <input type="text" id="caction" class="form-control our-inputs" placeholder="Plan of action" required="">                
+                                          </div>
+      
+                                          <div class="form-label-group mb-1">
+                                                <label>Latitude</label>
+                                                <input type="text" id="clat" class="form-control our-inputs" placeholder="Enter in degrees" required="">                
+                                             </div>
+
+                                             <div class="form-label-group mb-1">
+                                                   <label>Longitude</label>
+                                                   <input type="text" id="clon" class="form-control our-inputs" placeholder="Enter in degrees" required="">                
+                                                </div>
+
+
+                                          <div class="form-label-group mt-4">
+                                             <center><a href="#" onclick="addCheckpoint()" class="btn btn-primary">Add Checkpoint</a></center>          
+                                          </div>
+                                          <div class="py-4"> 
+                                              <h4 >##Status Of Transactionhash:</h4>
+                                            
+                                            </div>
+                                       </div>
+                                       <div class="text-center"><p id="addchkpnt"> </p></div>
+
+                              </div>
+
+                              <!-- track-product -->
+                              <div class="tab-pane fade" id="track-product" role="tabpanel" aria-labelledby="Tab2-tab">
+                                
+                                <div class="col-md-5 mx-auto py-4 text-center">
+                                    <div class="form-label-group my-3">
+                                        <label>Track</label>
+                                        <input type="text" id="tuid" class="form-control our-inputs" placeholder="Unique-id" required="">                
+                                     </div> 
+                                     <a href="#" onclick="trackProduct()" class="btn btn-primary">Track Product</a></div>
+                                <div class="col-md-12 mx-auto pb-5">
+                                    <div class="table-responsive">
+                                      <table class="table table-striped">
+                                        
+                                        <tr>
+                                          <th>Handler</th>
+                                          <th>Stage</th>
+                                          <th>Latitudes</th>
+                                          <th>Longitudes</th>
+                                          <th>Action Date</th>
+                                        </tr>
+                                        <tr>
+                                          <td><div id="chkpnts0a"></div></td>
+                                          <td><div id="chkpnts0b"></div></td>
+                                          <td><div id="chkpnts0c"></div></td>
+                                          <td><div id="chkpnts0d"></div></td>
+                                          <td><div id="chkpnts0e"></div></td>
+                                        </tr>
+                                        <tr>
+                                          <td><div id="chkpnts1a"></div></td>
+                                          <td><div id="chkpnts1b"></div></td>
+                                          <td><div id="chkpnts1c"></div></td>
+                                          <td><div id="chkpnts1d"></div></td>
+                                          <td><div id="chkpnts1e"></div></td>
+                                        </tr>
+                                          <tr>
+                                            <td><div id="chkpnts2a"></div></td>
+                                            <td><div id="chkpnts2b"></div></td>
+                                            <td><div id="chkpnts2c"></div></td>
+                                            <td><div id="chkpnts2d"></div></td>
+                                            <td><div id="chkpnts2e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts3a"></div></td>
+                                            <td><div id="chkpnts3b"></div></td>
+                                            <td><div id="chkpnts3c"></div></td>
+                                            <td><div id="chkpnts3d"></div></td>
+                                            <td><div id="chkpnts3e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts4a"></div></td>
+                                            <td><div id="chkpnts4b"></div></td>
+                                            <td><div id="chkpnts4c"></div></td>
+                                            <td><div id="chkpnts4d"></div></td>
+                                            <td><div id="chkpnts4e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts5a"></div></td>
+                                            <td><div id="chkpnts5b"></div></td>
+                                            <td><div id="chkpnts5c"></div></td>
+                                            <td><div id="chkpnts5d"></div></td>
+                                            <td><div id="chkpnts5e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts6a"></div></td>
+                                            <td><div id="chkpnts6b"></div></td>
+                                            <td><div id="chkpnts6c"></div></td>
+                                            <td><div id="chkpnts6d"></div></td>
+                                            <td><div id="chkpnts6e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts7a"></div></td>
+                                            <td><div id="chkpnts7b"></div></td>
+                                            <td><div id="chkpnts7c"></div></td>
+                                            <td><div id="chkpnts7d"></div></td>
+                                            <td><div id="chkpnts7e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts8a"></div></td>
+                                            <td><div id="chkpnts8b"></div></td>
+                                            <td><div id="chkpnts8c"></div></td>
+                                            <td><div id="chkpnts8d"></div></td>
+                                            <td><div id="chkpnts8e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts9a"></div></td>
+                                            <td><div id="chkpnts9b"></div></td>
+                                            <td><div id="chkpnts9c"></div></td>
+                                            <td><div id="chkpnts9d"></div></td>
+                                            <td><div id="chkpnts9e"></div></td>
+                                          </tr>
+                                          <tr>
+                                            <td><div id="chkpnts10a"></div></td>
+                                            <td><div id="chkpnts10b"></div></td>
+                                            <td><div id="chkpnts10c"></div></td>
+                                            <td><div id="chkpnts10d"></div></td>
+                                            <td><div id="chkpnts10e"></div></td>
+                                          </tr>
+                                      </table>  
+
+                                   </div>
+                              
+                              </div>
+                              </div>
+
+
+                    <!-- get-handler -->
+                              <div class="tab-pane fade" id="get-handler" role="tabpanel" aria-labelledby="Tab2-tab">
+                                    <div class="col-md-12 mx-auto py-5">
+                                          <h3 class="mt-2 text-center">Get handler info</h3>
+                                          <div class="form-label-group mb-1">
+                                             <label>Handler address</label>
+                                             <input type="text" id="handadd" class="form-control our-inputs" placeholder="Enter address" required="">   
+                                          </div>
+                                          <div class="form-label-group mt-4">
+                                             <center><a href="#" onclick="getHandler()" class="btn btn-primary">Get Handler</a></center>           
+                                          </div>
+                                          <div id="gethandinfo"></div>
+                                    </div>                                   
+                              </div>
+
+
+                                             <!-- list-all-handlers -->
+                              <div class="tab-pane fade" id="list-all-handlers" role="tabpanel" aria-labelledby="Tab2-tab">
+                                   
+                                    <div class="col-md-5 mx-auto py-5">
+                                          <h3 class="mt-2 text-center">All Handlers info</h3>
+                                       
+                                          <div class="form-label-group mt-4">
+                                             <center><a href="#" onclick="getAllHandlers()" class="btn btn-primary">Fetch All Handlers</a></center>           
+                                          </div>
+                                    </div> 
+                                    <br>
+                                    <div class="col-md-12 mx-auto">
+                                    <div id="getallhandinfo"></div>
+                                    </div>
+
+                                    </div>
+
+
+
+                                                     <!-- list-all-products -->
+                              <div class="tab-pane fade" id="list-all-products" role="tabpanel" aria-labelledby="Tab2-tab">
+                                    <div class="col-md-12 mx-auto pt-5">
+                                          <h3 class="mt-2 text-center">All products info</h3>
+                                       
+                                          <div class="form-label-group mt-4">
+                                             <center><a href="#" onclick="getAllProducts()" class="btn btn-primary">Fetch All Products</a></center>           
+                                          </div>
+                                          <div id="getallprodinfo"></div>
+                                    </div> 
+                                          
+      </section>
+     
+      <!-- move to top -->
+      <div href="#" id="gotop"><i class="fa fa-angle-up"></i></div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="js/jquery.min.js" ></script>
+      <script src="js/sticky-header.js" ></script>
+      <script src="js/bootstrap.min.js"  ></script>
+      <script src="js/popper.min.js" ></script>
+ 
+      
+ 
+ 
+
+
+       <!-- Start modal code -->
+       <div class="modal fade modal-new-1 mx-2" id="myModal-1">
+         <div class="modal-dialog " role="document">
+            <div class="modal-content">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"> × </button>
+               <div class="modal-body py-5">
+                  <h4 class="new-modal-title text-center">Access Your Wallet</h4>
+                  <p class="text-center mb-4">Select any one option to access your wallet</p>
+                  <form class="form-signin">
+                     <div class="form-label-group mb-4">
+                        <select   class="form-control our-inputs" placeholder="Select"  >
+                           <option>Private Key</option>
+                           <option>Option 2</option>
+                           <option>Option 3</option>
+                        </select>
+                     </div>
+                     <div class="form-label-group mb-4">
+                        <label>&nbsp;Enter Private keywords</label>
+                        <input type="text" id=" " class="form-control our-inputs" placeholder="Enter Private Keywords" required="">                
+                     </div>
+                     <div class="form-label-group mb-4">
+                        <button class="btn our-buttons buttons-common-1 w-100">Submit</button>           
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+     <!--End modal code -->
+
+
+     <script>
+            // Globals
+       var prefixes         = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+       var $container       = $('.container');
+       var $timeline        = $('.timeline');
+       var $timelineItem    = $('.timeline-item');
+       var $timelineContent = $('.timeline-content');
+       var $dropDown        = $('.dropdown');
+       var $hasHovered      = true;
+       var hideOnExit       = false;
+       
+       // mouseenter event handler
+       $timelineItem.on('mouseenter', function(e) {
+         
+         var isSelected = $(this).hasClass('selected');
+         
+         if ( isSelected === false ) {
+         
+           var leftPos = $(this).position().left,
+               left    = leftPos - 130,
+               $that   = $(this);
+       
+           $timelineItem.removeClass('selected');
+           $(this).addClass('selected');
+       
+           if ( $hasHovered === false ) {
+             // Show Bounce
+       
+               // Set Flag
+               $hasHovered = true;
+       
+               // Show DD Bounce
+               showBounce(left);
+       
+               // Show DD content Bounce
+               showContentBounce($that);
+       
+           } else {
+             // Follow
+       
+               // Change pos of DD to follow
+               dropDownFollow(left);
+       
+               // Hide previous dd content
+               $timelineContent.removeClass('animated fadeIn bounceIn');
+       
+               // Show hovered dd content
+               $that.find($timelineContent).addClass('animated fadeIn');
+           }
+         }
+         
+       });
+       
+       // mouseleave event handler
+       $timeline.on('mouseleave', function(e) {
+         
+         if (hideOnExit) {
+          
+           //   Set Flag
+           $hasHovered = false;
+       
+           // Hide DD
+           hideDropDown();
+       
+           // Hide DD content
+           $timelineContent.removeClass('animated fadeIn');
+           
+         }
+         
+       });
+       
+       // Animation end event listener
+       $dropDown.on(prefixes, function(e) {
+         
+         if ( e.originalEvent.animationName === 'fadeOut' ) {
+           $dropDown.removeAttr('style');
+         }
+         
+       });
+       
+       /**
+       * Private functions that do showing/hiding/animating
+       */
+       function showContentBounce(that) {
+         $hasBounced = true;
+         that.find('.timeline-content').addClass('animated bounceIn');
+       }
+       
+       function showBounce(pos) {
+         $dropDown.css('left', pos + 'px').removeClass('fadeOut').addClass('animated bounceIn');
+       }
+       
+       function dropDownFollow(pos) {
+         $dropDown.css('left', pos + 'px');
+       }
+       
+       function hideDropDown() {
+         $timelineItem.removeClass('selected');
+         $dropDown.removeClass('bounceIn').addClass('fadeOut');
+       }</script>
+       
+            <style type="text/css">
+        
+        
+        h2 {
+            font-family: 'Roboto', sans-serif;
+       }
+        .timeline {
+            width: 100%;
+            position: relative;
+            perspective: 5000px;
+       }
+        .timeline:before {
+         position: absolute;
+           content: "";
+           width: 100%;
+           height: 1px;
+           background-color: #49bea0;
+           border-radius: 15px;
+           top: 83px;
+       }
+        .timeline .timeline-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+       }
+        .timeline .timeline-item:hover:after {
+            transform: scale(1.5, 1.5);
+       }
+        .timeline .timeline-item.selected:after {
+            background-color: rgba(28, 119, 195, 1);
+            border: 5px solid rgba(86, 203, 249, 1);
+            transform: scale(1.5, 1.5);
+       }
+        .timeline .timeline-item:after {
+         width: 25px;
+           height: 25px;
+           position: absolute;
+           top: 70px;
+           left: 50%;
+           margin-left: -15px;
+           background-color: rgba(245, 239, 237, 1);
+           border: 5px solid rgba(213, 223, 229, 1);
+           content: "";
+           border-radius: 50%;
+           transition: transform 0.5s ease;
+       }
+        .timeline .timeline-item .timeline-content {
+            position: absolute;
+            top: -300px;
+            display: none;
+            width:100%;
+            left: -60px;
+            cursor: auto;
+       }
+        .timeline .timeline-item .timeline-content.fadeIn {
+            animation-delay: 0.2s;
+       }
+        .timeline .timeline-item .timeline-content.animated {
+            display: block;
+       }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: flex-start;
+       }
+        .flex-items-default {
+            width: 14.2%;
+            height: 150px;
+       }
+        .dropdown {
+            width: 400px;
+            height: 326px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 3px 20px 1px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: absolute;
+            top: -310px;
+            animation-duration: 0.2s;
+            transition: left 0.3s ease;
+       }
+        .dropdown .inner {
+            position: relative;
+            width: 100%;
+            height: 326px;
+       }
+        .dropdown .inner .arrow-down {
+            position: absolute;
+            bottom: -19px;
+            left: 50%;
+            margin-left: -20px;
+       }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid rgba(255, 255, 255, 1);
+       }
+        .animated {
+            display: block;
+       }
+        .material-icons {
+            position: absolute;
+            top: 189px;
+            left: 160px;
+            width: 100%;
+            color: rgba(255, 255, 255, 1);
+            font-size: 33px;
+       }
+        .hexagon {
+            position: relative;
+            width: 75px;
+            height: 43.3px;
+            background-color: rgba(28, 119, 195, 1);
+            margin: 21.65px 0;
+            left: 50%;
+            margin-left: -37px;
+            top: 25px;
+       }
+        .hexagon:before, .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 37.5px solid transparent;
+            border-right: 37.5px solid transparent;
+       }
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 21.65px solid rgba(28, 119, 195, 1);
+       }
+        .hexagon:after {
+            top: 100%;
+            width: 0;
+            border-top: 21.65px solid rgba(28, 119, 195, 1);
+       }
+        
+            </style>
+            <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=<Google Maps Javascript API token>"
+              type="text/javascript"></script>
+
+<script>
+
+   function openTab(evt, tabname) {
+       // Declare all variables
+       var i, tabcontent, tablinks;
+   
+       // Get all elements with class="tabcontent" and hide them
+       tabcontent = document.getElementsByClassName("tabcontent");
+       for (i = 0; i < tabcontent.length; i++) {
+           tabcontent[i].style.display = "none";
+       }
+   
+       // Get all elements with class="tablinks" and remove the class "active"
+       tablinks = document.getElementsByClassName("tablinks");
+       for (i = 0; i < tablinks.length; i++) {
+           tablinks[i].className = tablinks[i].className.replace(" active", "");
+       }
+   
+       // Show the current tab, and add an "active" class to the button that opened the tab
+       document.getElementById(tabname).style.display = "block";
+       evt.currentTarget.className += " active";
+   }
+   
+   if (typeof web3 !== "undefined") {
+     web3 = new Web3(web3.currentProvider);
+   } else {
+      web3 = new Web3(new Web3.providers.HttpProvider("http://40.78.48.235:8083/api/node/rpc"));
+     //web3 = new Web3(new Web3.providers.HttpProvider("http://40.83.215.160:8083/api/node/rpc"));
+   }
+   
+   var abi =[
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "handlerAddress",
+          "type": "address"
+        },
+        {
+          "name": "handlerName",
+          "type": "bytes32"
+        },
+        {
+          "name": "handlerInfo",
+          "type": "bytes32"
+        },
+        {
+          "name": "handlerRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addHandler",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "uid",
+          "type": "bytes32"
+        },
+        {
+          "name": "productInfo",
+          "type": "bytes32"
+        },
+        {
+          "name": "checkpointInfo",
+          "type": "bytes32"
+        },
+        {
+          "name": "lat",
+          "type": "uint256"
+        },
+        {
+          "name": "lon",
+          "type": "uint256"
+        }
+      ],
+      "name": "addProduct",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "uid",
+          "type": "bytes32"
+        },
+        {
+          "name": "checkpointInfo",
+          "type": "bytes32"
+        },
+        {
+          "name": "lat",
+          "type": "uint256"
+        },
+        {
+          "name": "lon",
+          "type": "uint256"
+        }
+      ],
+      "name": "addCheckpoint",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "uid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getProduct",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "address[]"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "name": "",
+          "type": "uint256[]"
+        },
+        {
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "addressOfHandler",
+          "type": "address"
+        }
+      ],
+      "name": "getHandler",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllProducts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllHandlers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ];
+     
+     // Test
+     // var contractAddress = "0x422711430aeb09073fed0ca78df047f486d6e9ef";
+      var contractAddress = "0xff40ef2c397dcf5b4c8f953a9edc4fd9acb4e2dc";
+ 
+     //var contractAddress = "0xd7921936b08ce00d5441e359d7ac84ef6ed98f43";
+     async function init() {
+      supplyChain = await new web3.eth.Contract(abi, contractAddress);
+      var accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      console.log(supplyChain);
+      web3.eth.defaultAccount = accounts[0];
+    }
+    init();
+  
+    async function registerHandler() {
+      var ethadd = document.getElementById('ethadd').value;
+      var hname = document.getElementById('hname').value;
+      var haddr = document.getElementById('haddr').value;
+      var Role = document.getElementById('role').value;
+  
+      supplyChain.methods.addHandler(ethadd, web3.utils.fromAscii(hname),web3.utils.fromAscii(Role), web3.utils.fromAscii(haddr)).send({from: web3.eth.defaultAccount}).on('receipt', function(receipt) {
+        console.log(receipt);
+        document.getElementById("addhandstat").innerHTML = "Sent TX#: " + receipt.blockHash;
+      }); 
+    }
+  
+    async function registerProduct() {
+      var uid = document.getElementById('uid').value;
+      var name = document.getElementById('name').value;
+      var action = document.getElementById('action').value;
+  
+      supplyChain.methods.addProduct(web3.utils.fromAscii(uid), web3.utils.fromAscii(name), web3.utils.fromAscii(action), document.getElementById('lat').value, document.getElementById('lon').value).send({from: web3.eth.defaultAccount}).on('receipt', function(receipt) {
+        console.log(receipt);
+        document.getElementById("addprodstat").innerHTML = "Sent TX#: " + receipt.blockHash;
+        console.log(receipt.blockHash);
+      }); 
+    }
+  
+    async function addCheckpoint() {
+      var cuid = document.getElementById('cuid').value;
+      var caction = document.getElementById('caction').value;
+  
+      supplyChain.methods.addCheckpoint(web3.utils.fromAscii(cuid), web3.utils.fromAscii(caction), document.getElementById('lat').value, document.getElementById('lon').value).send({from: web3.eth.defaultAccount}).on('receipt', function(receipt) {
+        console.log(receipt);
+        document.getElementById("addchkpnt").innerHTML = "Sent TX#: " + receipt.blockHash;
+      }); 
+    }
+  
+    async function trackProduct() {
+      var tuid = document.getElementById('tuid').value;
+  
+      supplyChain.methods.getProduct(web3.utils.fromAscii(tuid)).call().then(function(data) {
+        console.log("data: ", data);
+        numOfStages = data[1].length;
+        console.log("No.of Stages: ", numOfStages);
+        var date0 = new Date((data[5][0])/1000000).toUTCString();
+        var date1 = new Date((data[5][1])/1000000).toUTCString();
+        var date2 = new Date((data[5][2])/1000000).toUTCString();
+        var date3 = new Date((data[5][3])/1000000).toUTCString();
+        var date4 = new Date((data[5][4])/1000000).toUTCString();
+        var date5 = new Date((data[5][5])/1000000).toUTCString();
+        var date6 = new Date((data[5][6])/1000000).toUTCString();
+        var date7 = new Date((data[5][7])/1000000).toUTCString();
+        var date8 = new Date((data[5][8])/1000000).toUTCString();
+        var date9 = new Date((data[5][9])/1000000).toUTCString();
+        var date10 = new Date((data[5][10])/1000000).toUTCString();
+        document.getElementById("chkpnts0a").innerHTML = cleanPadding(data[1][0]);
+        document.getElementById("chkpnts0b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][0]));
+        document.getElementById("chkpnts0c").innerHTML = cleanPadding(data[3][0]);
+        document.getElementById("chkpnts0d").innerHTML = cleanPadding(data[4][0]);
+        document.getElementById("chkpnts0e").innerHTML = date0;
+        document.getElementById("chkpnts1a").innerHTML = cleanPadding(data[1][1]);
+        document.getElementById("chkpnts1b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][1]));
+        document.getElementById("chkpnts1c").innerHTML = cleanPadding(data[3][1]);
+        document.getElementById("chkpnts1d").innerHTML = cleanPadding(data[4][1]);
+        document.getElementById("chkpnts1e").innerHTML = date1;
+        document.getElementById("chkpnts2a").innerHTML = cleanPadding(data[1][2]);
+        document.getElementById("chkpnts2b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][2]));
+        document.getElementById("chkpnts2c").innerHTML = cleanPadding(data[3][2]);
+        document.getElementById("chkpnts2d").innerHTML = cleanPadding(data[4][2]);
+        document.getElementById("chkpnts2e").innerHTML = date2;
+        document.getElementById("chkpnts3a").innerHTML = cleanPadding(data[1][3]);
+        document.getElementById("chkpnts3b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][3]));
+        document.getElementById("chkpnts3c").innerHTML = cleanPadding(data[3][3]);
+        document.getElementById("chkpnts3d").innerHTML = cleanPadding(data[4][3]);
+        document.getElementById("chkpnts3e").innerHTML = date3;
+        document.getElementById("chkpnts4a").innerHTML = cleanPadding(data[1][4]);
+        document.getElementById("chkpnts4b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][4]));
+        document.getElementById("chkpnts4c").innerHTML = cleanPadding(data[3][4]);
+        document.getElementById("chkpnts4d").innerHTML = cleanPadding(data[4][4]);
+        document.getElementById("chkpnts4e").innerHTML = date4;
+        document.getElementById("chkpnts5a").innerHTML = cleanPadding(data[1][5]);
+        document.getElementById("chkpnts5b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][5]));
+        document.getElementById("chkpnts5c").innerHTML = cleanPadding(data[3][5]);
+        document.getElementById("chkpnts5d").innerHTML = cleanPadding(data[4][5]);
+        document.getElementById("chkpnts5e").innerHTML = date5;
+        document.getElementById("chkpnts6a").innerHTML = cleanPadding(data[1][6]);
+        document.getElementById("chkpnts6b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][6]));
+        document.getElementById("chkpnts6c").innerHTML = cleanPadding(data[3][6]);
+        document.getElementById("chkpnts6d").innerHTML = cleanPadding(data[4][6]);
+        document.getElementById("chkpnts6e").innerHTML = date6;
+        document.getElementById("chkpnts7a").innerHTML = cleanPadding(data[1][7]);
+        document.getElementById("chkpnts7b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][7]));
+        document.getElementById("chkpnts7c").innerHTML = cleanPadding(data[3][7]);
+        document.getElementById("chkpnts7d").innerHTML = cleanPadding(data[4][7]);
+        document.getElementById("chkpnts7e").innerHTML = date7;
+        document.getElementById("chkpnts8a").innerHTML = cleanPadding(data[1][8]);
+        document.getElementById("chkpnts8b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][8]));
+        document.getElementById("chkpnts8c").innerHTML = cleanPadding(data[3][8]);
+        document.getElementById("chkpnts8d").innerHTML = cleanPadding(data[4][8]);
+        document.getElementById("chkpnts8e").innerHTML = date8;
+        document.getElementById("chkpnts9a").innerHTML = cleanPadding(data[1][9]);
+        document.getElementById("chkpnts9b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][9]));
+        document.getElementById("chkpnts9c").innerHTML = cleanPadding(data[3][9]);
+        document.getElementById("chkpnts9d").innerHTML = cleanPadding(data[4][9]);
+        document.getElementById("chkpnts9e").innerHTML = date9;
+        document.getElementById("chkpnts10a").innerHTML = cleanPadding(data[1][10]);
+        document.getElementById("chkpnts10b").innerHTML = web3.utils.toAscii(cleanPadding(data[2][10]));
+        document.getElementById("chkpnts10c").innerHTML = cleanPadding(data[3][10]);
+        document.getElementById("chkpnts10d").innerHTML = cleanPadding(data[4][10]);
+        document.getElementById("chkpnts10e").innerHTML = date10;
+          
+      });
+    }
+    async function getHandler() {
+      var tuid = document.getElementById('handadd').value;
+  
+      supplyChain.methods.getHandler(tuid).call().then(function(data) {
+        str = '<div class="table-responsive mt-5"><table class="table table-bordered table-striped"><thead><tr><th>Name</th><th>Role</th><th>Address</th><th>Handler Address</th></tr></thead><tbody>';
+				str = str + '<tr><td>'+ web3.utils.toAscii(data[0]) + '</td>' +'<td>'+web3.utils.toAscii(data[1]) + '</td>' +'<td>'+web3.utils.toAscii(data[2]) + '</td>' + '<td>'+tuid+'</td></tr>';
+				str = str + '</tbody></table></div>';
+				document.getElementById("gethandinfo").innerHTML = str;
+      });
+    }
+  
+    async function getAllHandlers() {
+  
+      supplyChain.methods.getAllHandlers().call().then(function(data) {
+        console.log("data: ", data);
+        console.log("Total no.of Holders ", data[0].length);
+        numOfHandlers = data[0].length;
+        str = '<div class="table-responsive"><table class="table table-bordered table-striped"><thead><tr><th>#</th><th>Name</th><th>Role</th><th>Address</th><th>Handler Address</th></tr></thead><tbody>';
+          console.log(data);
+          for(let i = 0; i < numOfHandlers; i++) {
+					let tmpJSON = web3.utils.toAscii(cleanPadding(data[2][i]));
+					str = str + '<tr><td>'+ String(i+1) + '</td>' + '<td>' + web3.utils.toAscii((data[1][i])) + '</td>' +'<td>'+web3.utils.toAscii((data[2][i])) + '</td>' +'<td>'+web3.utils.toAscii((data[3][i])) + '</td>'+ '<td>'+data[0][i]+'</td></tr>';
+				}
+				str = str + '</tbody></table></div>';
+				document.getElementById("getallhandinfo").innerHTML = str;
+  
+      });
+    }
+  
+    async function getAllProducts() {
+      supplyChain.methods.getAllProducts().call().then(function(data) {
+        console.log("data: ", data);
+        console.log("Total no.of Products ", data[0].length);
+  
+        numOfProducts = data[0].length;
+        str = '<div class="table-responsive mt-5"><table class="table table-bordered table-striped"><thead><tr><th>#</th><th>Product Unique ID</th><th>Product Name</th><th>Number of Actions</th></tr></thead><tbody>';
+  
+        for(let i = 0; i < numOfProducts; i++) {
+          let tmpJSON = JSON.parse(web3.utils.toAscii(cleanPadding(data[0][i])));
+          str = str + '<tr><td>'+ String(i+1) + '</td>' + '<td>' + web3.utils.toAscii(data[0][i]) + '</td>' +'<td>' + web3.utils.toAscii(data[1][i]) + '</td>' + '<td>'+ data[2][i] +'</td></tr>';
+        }
+        str = str + '</tbody></table></div>';
+				document.getElementById("getallprodinfo").innerHTML = str;
+ 
+      });
+    } 
+  function cleanPadding(bstr) {
+	let len = bstr.length;
+	let i = len;
+	// Count amount of zeroes
+	while (i >= 1) {
+		if(bstr[i-1] != '0') {
+			break;
+		}
+		i--;
+	}
+	return(bstr.substring(0,i));
+}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* Started box-shadow css*/
+.container-area{background: #FFF; margin: 40px auto;min-height:600px;}
+.login-box{ background: #FFF; border-radius: 20px; min-height: calc(100vh - 50vh);}
+.nav-sides-radius{background:#2c6fb5;border: 0px;}
+.nav-sides-radius .nav-link{font-size: 15px; border: 0px; border-radius: 0px }
+.nav-sides-radius .nav-link.active{ background: #49bea1; border:0px !important; border-radius: 0px; color:#fff; }
+.nav-sides-radius .nav-item{margin-bottom: 5px; padding-bottom: 5px; text-align: left; 	 border-bottom: solid 1px rgba(255,255,255,0.2);}
+.nav-sides-radius a{ color: #fff; font: }
+.effect5 {position: relative;}
+.effect5:before,.effect5:after {	z-index: -1;	position: absolute;	content: "";
+	bottom: 25px;	left: 10px;	width: 50%;	top: 80%;	background: #777;
+   -webkit-box-shadow: 0 35px 20px #777;	-moz-box-shadow: 0 35px 20px #777;	box-shadow: 0 35px 20px #777;	
+   -webkit-transform: rotate(-8deg);	-moz-transform: rotate(-8deg);
+	-o-transform: rotate(-8deg);	-ms-transform: rotate(-8deg);	transform: rotate(-8deg);}
+.login-subline{font-size: 13px;  color:#8a8484; line-height: 18px;}
+.effect5:after {
+	-webkit-transform: rotate(8deg);
+	-moz-transform: rotate(8deg);
+	-o-transform: rotate(8deg);
+	-ms-transform: rotate(8deg);
+	transform: rotate(8deg);
+	right: 10px;
+	left: auto;
+}
+/* End shadow css */
+
+
+/* Start modal css */
+#myModal-1 .modal-dialog  {
+-webkit-transform: translate(0,-50%);
+-o-transform: translate(0,-50%);
+transform: translate(0,-50%);
+top: 50%;
+margin: 0 auto;
+}
+.modal-new-1 .modal-content{ border:solid 15px #49bea0; border-radius: 0px }
+.modal-new-1 .modal-content .close {
+/* margin-top: -54px; */
+margin-right: -24px;
+border: solid 2px #49bea0;
+padding: 0px;
+/* line-height: 10px; */
+width: 37px;
+height: 37px;
+border-radius: 100%;
+/* margin-top: -55px; */
+color: #49bea0 !important;
+background: #fff;
+opacity: 1;
+position: absolute;
+top: -30px;
+right: -2px;
+padding-bottom: 18px;
+font-size: 28px; outline: none;
+}
+.modal-new-1 .modal-content .close:hover { border: solid 2px #7107f2; color: #7107f2 !important }
+.modal-new-1 .modal-content{max-width: 420px; margin:auto;}
+/*End modal css */
+
+.left-sidebar{
+	background: #2c6fb5;
+	min-height: 600px;
+	height: 100%;
+}
+.left-sidebar .navbar-brand{
+	padding: 15px 0px;
+	display: block;
+	text-align: center;
+}
